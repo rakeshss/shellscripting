@@ -1,0 +1,109 @@
+Basic Level:-
+
+## prints date
+    date
+
+## prints date in universal time
+    date -u
+
+## prints to output terminal
+    echo "hello world!!"
+
+## tells through output (sound) device what you typed.
+    say "Hello"
+
+## Display calender
+    cal
+
+## Display calender of particular month
+    cal 11 2021  ## this displays Nov month calendar for 2021.
+
+## List all files in a directory
+    ls
+    ls -a   ## displays hidden files as well.
+    ls -l   ## displays in list format
+    # above command displays something like this, Note file could be read (r), write (w) and execute (x)
+    drwxr-xr-x   5 rakesh  staff  160 Nov  4 18:25 architecture
+
+## To open any file or directory from command line
+    open file_name/dir_name.
+    xdg-open file_name/dir_name ## in ubuntu
+
+## To create file
+    touch test.xls
+
+    touch is also used to change the last time edit. Later you can sort based on last file modified.
+
+## Move file from one directoty to another
+   mv test.txt new_folder
+   mv ABC/new_file.txt . # moves new_file.txt from ABC directory to current directory.
+
+   say if we want to rename test.txt to a.txt
+   mv test.txt a.txt
+
+Question: What's the difference between cp and mv commands?
+
+## To copy or duplicate a file
+  cp 1.txt 2.txt  # 2.txt has the same contents of 1.txt
+
+## Move all files which ends with txt extention from A to current directory
+  mv A/*.txt .
+
+## To empty a directory(say A-dir), use remove (rm) command
+    rm A-dir/*
+
+## Recursive -R option
+say when you want to copy a directory and it has sub directories into another directory, you need to use recursive option.
+
+    cp -R A-folder/ B-folder
+
+when you try to delete a folder
+    rm B-folder # it complains saying it is directory.
+
+solution is use recorsive option.
+    rm -R B-folder
+
+Note: mv command doesn't need -R option.
+
+    ls -R . ## list all sub directories as well in a single command.
+
+
+
+
+**Productivity hack**
+Start using alias command effectively
+
+vi ~/.bash_aliases
+alias list='ls -l'
+
+On New terminal or whenever you open terminal, referesh the alias commands by running -
+source ~/.bash_aliases
+
+Verify by alias
+
+To unset use use command.
+unalias list
+
+*****
+
+## Task: Search for a word in file
+echo file1 | grep -c file
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

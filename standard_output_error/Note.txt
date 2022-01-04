@@ -1,0 +1,30 @@
+In addition to standard output, there is also a standard error channel. When you pass a non-existent file to the cat command, it throws an error message out to the terminal, as you would have seen when you attempted the code above. Although the message looks the same as the contents of a file, it is sent to a different output channel. In this case it’s standard error rather than standard output.
+
+As a result, it is NOT passed through the pipe to the grep command, and grep counts zero matches in its output.
+
+To the viewer of the terminal, there is no difference, but to bash there is all the difference in the world!
+
+There is a simpler way to refer to these channels. A number is assigned to each of them by the operating system.
+
+These are the numbered file descriptors, and the first three are assigned to the numbers 0,1 and 2.
+
+    0 is standard input
+
+    1 is standard output
+
+    2 is standard error
+
+When you redirect ‘standard output’ to a file, you use the redirection operator >. Implicitly, you are using the 1 file descriptor.
+
+Type this to see an example of redirecting 2, which is ‘standard error’.
+
+command_does_not_exist
+command_does_not_exist 2> /dev/null
+
+In line 2, the file descriptor 2 (standard error) is directed to a file called /dev/null
+
+The file /dev/null is a special file created by Linux (and UNIX) kernels.
+It is effectively a black hole into which data can be pumped: anything written to it will be absorbed and ignored.
+
+Another commonly seen redirection operator is 2>&1
+
