@@ -18,3 +18,9 @@ echo "Learning basic stuff on exit code.."
 echo 'grepme' > afile.txt
 grep not_there afile.txt
 echo $?
+
+# another example
+if grep grepme afile.txt
+then
+    echo 'matched!'
+fi
